@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Cementos - Suministros de Materiales LM</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+    <!-- Custom stylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    <style>
+        /* Estilos para ocultar/mostrar productos con el botón Cargar más */
+        .producto-item {
+            display: none;
+        }
+        .btn-cargar-mas {
+            background-color: #D10024;
+            color: #FFF;
+            border: none;
+            padding: 12px 35px;
+            font-weight: 700;
+            border-radius: 40px;
+            text-transform: uppercase;
+            transition: 0.3s background;
+            margin: 20px 0;
+        }
+        .btn-cargar-mas:hover {
+            background-color: #1E1F29;
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div id="top-header">
+            <div class="container">
+                <ul class="header-links pull-left">
+                    <li><a href="https://wa.me/50363119405"><i class="fa fa-phone"></i> +503 6311 9405</a></li>
+                    <li><a href="mailto:suministrodematerialeslm@gmail.com"><i class="fa-solid fa-envelope"></i> suministrodematerialeslm@gmail.com</a></li>
+                    <li><a href="https://maps.app.goo.gl/v9jijMX7EBuBnp978" target="_blank"><i class="fa fa-map-marker"></i> Carr. Oro Km. 14, Ciudad Delgado</a></li>
+                    <li><a href="https://maps.app.goo.gl/VpvAzqQnysEqJSnQ6" target="_blank"><i class="fa fa-map-marker"></i> Soyapango, Ctra. a Tonacatepeque</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="header-logo">
+                            <a href="index.html" class="logo">
+                                <img src="./img/logo.png" alt="Suministros de Materiales LM">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="header-search">
+                            <form action="cementos.html" method="GET">
+                                <input class="input" type="text" placeholder="Buscar en nuestro catálogo...">
+                                <button type="submit" class="search-btn">Buscar</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-3 clearfix">
+                        <div class="header-ctn">
+                            <div class="menu-toggle">
+                                <a href="#">
+                                    <i class="fa fa-bars"></i>
+                                    <span>Menú</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- NAVIGATION -->
+    <nav id="navigation">
+        <div class="container">
+            <div id="responsive-nav">
+                <ul class="main-nav nav navbar-nav">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="active"><a href="cementos.html">Cementos</a></li>
+                    <li><a href="ladrillos-bloques.html">Ladrillos y Bloques</a></li>
+                    <li><a href="tuberia.html">Tubería</a></li>
+                    <li><a href="pegamentos-acabados.html">Pegamentos y Acabados</a></li>
+                    <li><a href="hierros-laminas.html">Hierros y Láminas</a></li>
+                    <li><a href="maquinaria.html">Maquinaria</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- /NAVIGATION -->
+
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb-tree">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li class="active">Catálogo de Cementos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /BREADCRUMB -->
+
+    <!-- SECTION DE PRODUCTOS -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Categoría: Cementos</h3>
+                    </div>
+                </div>
+
+                <!-- CONTENEDOR DE PRODUCTOS -->
+                <div id="lista-productos">
+
+                    <!-- Producto 1 -->
+                    <div class="col-md-3 col-xs-6 producto-item">
+                        <div class="product">
+                            <div class="product-img">
+                                <img src="./img/product01.png" alt="Cemento Cessa">
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">Holcim</p>
+                                <h3 class="product-name"><a href="#">Cemento Cessa Fuerte</a></h3>
+                                <p class="product-desc" style="font-size: 0.85rem; color: #666;">Cemento Portland de uso general para losas, columnas y repellos.</p>
+                            </div>
+                            <div class="add-to-cart">
+                                <button class="add-to-cart-btn" onclick="window.location.href='https://wa.me/50363119405?text=Hola,%20quisiera%20cotizar:%20Cemento%20Cessa%20General%20-%20Holcim';"><i class="fa fa-whatsapp"></i> Cotizar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="col-md-3 col-xs-6 producto-item">
+                        <div class="product">
+                            <div class="product-img">
+                                <img src="./img/regional.png" alt="Cemento Regional">
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">Regional</p>
+                                <h3 class="product-name"><a href="#">Cemento Regional 5000 PSI</a></h3>
+                                <p class="product-desc" style="font-size: 0.85rem; color: #666;">Alta resistencia estructural, ideal para fundiciones de alta capacidad.</p>
+                            </div>
+                            <div class="add-to-cart">
+                                <button class="add-to-cart-btn" onclick="window.location.href='https://wa.me/50363119405?text=Hola,%20quisiera%20cotizar:%20Cemento%20Regional%205000%20PSI';"><i class="fa fa-whatsapp"></i> Cotizar</button>
+                            </div>
+                        </div>
+                    </div>
+
+  
+
+                </div>
+
+                <!-- BOTÓN CARGAR MÁS -->
+                <div class="col-md-12 text-center">
+                    <button id="btn-cargar-mas" class="btn-cargar-mas">Cargar más productos</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /SECTION DE PRODUCTOS -->
+
+    <!-- NEWSLETTER / REDES SOCIALES -->
+    <div id="newsletter" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="newsletter" style="text-align: center;">
+                        <p>¡GRACIAS POR PREFERIRNOS! <strong>SUMINISTROS DE MATERIALES L&M</strong></p>
+                        
+                        <div class="texto-imagen-container">
+                            <img src="./img/tarjeta.jpg" alt="Imagen informativa" class="imagen-newsletter" style="display: block; margin: 0 auto 15px auto; max-width: 100%;">
+                            
+                            <div class="redes-abajo" style="margin-top: 15px;">
+                                <span class="texto-destacado" style="display: block; font-weight: bold; margin-bottom: 10px;">SIGUENOS EN NUESTRAS REDES SOCIALES!!!</span>
+                                
+                                <ul class="newsletter-follow" style="display: inline-flex; list-style: none; gap: 15px; padding: 0; justify-content: center;">
+                                    <li>
+                                        <a href="https://www.facebook.com/share/19UXctf94p/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.tiktok.com/@ferreterialeon.1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://wa.me/50363119405?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20sus%20materiales" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /NEWSLETTER -->
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">SOBRE NOSOTROS</h3>
+                            <p>Calidad, variedad y confianza en materiales para la construcción e industria.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Categorías</h3>
+                            <ul class="footer-links">
+                                <li><a href="cementos.html">Cementos</a></li>
+                                <li><a href="ladrillos-bloques.html">Ladrillos y Bloques</a></li>
+                                <li><a href="tuberia.html">Tubería</a></li>
+                                <li><a href="pegamentos-acabados.html">Pegamentos y Acabados</a></li>
+                                <li><a href="hierros-laminas.html">Hierros y Láminas</a></li>
+                                <li><a href="maquinaria.html">Maquinaria</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="clearfix visible-xs"></div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Contacto</h3>
+                            <ul class="footer-links">
+                                <li><a href="https://wa.me/50363119405" target="_blank"><i class="fa-brands fa-whatsapp"></i> +503 6311 9405</a></li>
+                                <li><a href="mailto:suministrodematerialeslm@gmail.com"><i class="fa-solid fa-envelope"></i> Envíanos un Correo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">SUCURSALES</h3>
+                            <ul class="footer-links">
+                                <li><a href="https://maps.app.goo.gl/v9jijMX7EBuBnp978" target="_blank"><i class="fa fa-map-marker"></i> Carr. Oro Km. 14, Ciudad Delgado</a></li>
+                                <li><a href="https://maps.app.goo.gl/VpvAzqQnysEqJSnQ6" target="_blank"><i class="fa fa-map-marker"></i> Soyapango, Ctra. a Tonacatepeque</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+
+    <!-- jQuery & Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- SCRIPT DE "CARGAR MÁS" (MOSTRAR DE 8 EN 8) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const productos = Array.from(document.querySelectorAll('.producto-item'));
+            const btnCargarMas = document.getElementById('btn-cargar-mas');
+            const porPagina = 8;
+            let visibles = porPagina;
+
+            // Función para actualizar visibilidad
+            function mostrarProductos() {
+                productos.forEach((prod, index) => {
+                    if (index < visibles) {
+                        prod.style.display = 'block';
+                    } else {
+                        prod.style.display = 'none';
+                    }
+                });
+
+                // Si ya se mostraron todos, ocultar el botón
+                if (visibles >= productos.length) {
+                    btnCargarMas.style.display = 'none';
+                }
+            }
+
+            // Mostrar los primeros 8
+            mostrarProductos();
+
+            // Evento clic en Cargar Más
+            btnCargarMas.addEventListener('click', function () {
+                visibles += porPagina;
+                mostrarProductos();
+            });
+        });
+    </script>
+
+    <div class="footer-bottom" style="text-align: center; font-size: 0.9rem; border-top: 1px solid #444; padding-top: 15px; margin-top: 20px;">
+        <p>Suministros de Materiales LM &bull; Creado por Erick Cruz</p>
+    </div>
+
+</body>
+</html>
