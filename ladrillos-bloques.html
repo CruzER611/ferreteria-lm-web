@@ -740,6 +740,38 @@
 				window.open(url, '_blank', 'noopener');
 			});
 		})();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const productos = Array.from(document.querySelectorAll('.producto-item'));
+            const btnCargarMas = document.getElementById('btn-cargar-mas');
+            const porPagina = 8;
+            let visibles = porPagina;
+
+            // Función para actualizar visibilidad
+            function mostrarProductos() {
+                productos.forEach((prod, index) => {
+                    if (index < visibles) {
+                        prod.style.display = 'block';
+                    } else {
+                        prod.style.display = 'none';
+                    }
+                });
+
+                // Si ya se mostraron todos, ocultar el botón
+                if (visibles >= productos.length) {
+                    btnCargarMas.style.display = 'none';
+                }
+            }
+
+            // Mostrar los primeros 8
+            mostrarProductos();
+
+            // Evento clic en Cargar Más
+            btnCargarMas.addEventListener('click', function () {
+                visibles += porPagina;
+                mostrarProductos();
+            });
+        });
 	</script>
 
 </body>
