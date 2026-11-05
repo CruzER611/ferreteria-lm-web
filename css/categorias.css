@@ -1,0 +1,171 @@
+/* =========================================================
+   categorias.css  ·  Páginas de categoría
+   (cementos, ladrillos-bloques, tuberia, etc.)
+   Cárgalo DESPUÉS de style.css y mejoras.css.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. CUADRÍCULA DE PRODUCTOS
+   --------------------------------------------------------- */
+#lista-productos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#lista-productos > .producto-item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 25%;
+  max-width: 25%;
+  width: 25%;
+  margin-bottom: 30px;
+  float: none;
+}
+
+/* Esta clase la pone y la quita el JavaScript (js/categorias.js)
+   para esconder los productos que aún no toca mostrar.
+   Tiene más especificidad que la regla de arriba, por eso SÍ funciona. */
+#lista-productos > .producto-item.oculto {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  #lista-productos > .producto-item {
+    flex-basis: 50%;
+    max-width: 50%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  #lista-productos > .producto-item {
+    flex-basis: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   2. TARJETA DE PRODUCTO
+   --------------------------------------------------------- */
+#lista-productos .product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #FFF;
+}
+
+#lista-productos .product .product-body { flex-grow: 1; }
+
+#lista-productos .product .product-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  padding: 15px;
+  overflow: hidden;
+  background: #FFF;
+}
+
+#lista-productos .product .product-img img {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#lista-productos .product .product-desc {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+
+/* ---------------------------------------------------------
+   3. BARRA "COTIZAR" (aparece al pasar el mouse)
+   --------------------------------------------------------- */
+#lista-productos .product .add-to-cart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  width: 100%;
+  padding: 15px;
+  background: #1e1f29;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#lista-productos .product:hover .add-to-cart,
+#lista-productos .product:focus-within .add-to-cart {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* En celulares y tablets (sin "hover") el botón se ve SIEMPRE,
+   porque ahí no existe el "pasar el mouse por encima". */
+@media (hover: none) {
+  #lista-productos .product .add-to-cart {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   4. BOTÓN "CARGAR MÁS" Y CONTADOR
+   --------------------------------------------------------- */
+.btn-cargar-mas {
+  margin: 20px 0 10px;
+  padding: 12px 35px;
+  border: none;
+  border-radius: 40px;
+  background: var(--brand, #D10024);
+  color: #FFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s background;
+}
+
+.btn-cargar-mas:hover,
+.btn-cargar-mas:focus {
+  background: #1E1F29;
+  color: #FFF;
+}
+
+#contador-productos {
+  min-height: 18px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: #8D99AE;
+}
+
+
+/* ---------------------------------------------------------
+   5. MENSAJE CUANDO LA CATEGORÍA AÚN NO TIENE PRODUCTOS
+   --------------------------------------------------------- */
+.catalogo-vacio { padding: 50px 15px; }
+
+.catalogo-vacio i {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 48px;
+  color: var(--brand, #D10024);
+}
+
+.catalogo-vacio p {
+  margin-bottom: 20px;
+  color: #666;
+}

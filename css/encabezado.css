@@ -1,0 +1,167 @@
+/* =========================================================
+   encabezado.css  ·  Suministros de Materiales L&M
+   Encabezado moderno (solo lo usa index-nuevo-2.html).
+   Cárgalo DESPUÉS de style.css y mejoras.css.
+   El color de acento sale de la variable --brand (mejoras.css).
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. FRANJA SUPERIOR (teléfono, correo y aviso de domicilio)
+   --------------------------------------------------------- */
+#top-header {
+  padding: 8px 0;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+}
+
+.top-bar .header-links li {
+  margin-right: 22px;
+  font-size: 12.5px;
+}
+.top-bar .header-links li:last-child { margin-right: 0; }
+
+.top-bar-note {
+  margin: 0;
+  font-size: 12.5px;
+  color: #B9BABC;
+}
+.top-bar-note i {
+  margin-right: 6px;
+  color: var(--brand);
+}
+
+
+/* ---------------------------------------------------------
+   2. ENCABEZADO PRINCIPAL: fondo limpio, logo + categorías
+   --------------------------------------------------------- */
+#header.site-main-header {
+  padding: 14px 0;
+  background-color: #FFF;
+  background-image: none;               /* quita el banner anterior */
+  border-bottom: 3px solid var(--brand);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header-brand {
+  flex: 0 0 auto;
+  display: block;
+}
+.header-brand img {
+  display: block;
+  height: 88px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   3. ÍCONOS DE CATEGORÍAS (reemplazan al buscador)
+   --------------------------------------------------------- */
+.cat-nav {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.cat-tile {
+  flex: 0 1 118px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 6px;
+  border-radius: 12px;
+  text-align: center;
+  color: #2B2D42;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #F4F5F7;
+  color: var(--brand);
+  font-size: 21px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.cat-icon i { line-height: 1; }
+
+.cat-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.cat-tile:hover,
+.cat-tile:focus {
+  background: #FBFBFC;
+  transform: translateY(-3px);
+}
+.cat-tile:hover .cat-icon,
+.cat-tile:focus .cat-icon {
+  background: var(--brand);
+  color: #FFF;
+}
+.cat-tile:hover .cat-label,
+.cat-tile:focus .cat-label { color: var(--brand); }
+
+.cat-tile:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   4. TABLET Y CELULAR
+   --------------------------------------------------------- */
+@media only screen and (max-width: 991px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .cat-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* 3 íconos por fila */
+  .cat-tile { flex: 0 0 calc(33.333% - 8px); }
+}
+
+@media only screen and (max-width: 767px) {
+  .top-bar {
+    justify-content: center;
+    text-align: center;
+  }
+  .header-brand img { height: 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-tile, .cat-icon, .cat-label { transition: none; }
+  .cat-tile:hover, .cat-tile:focus { transform: none; }
+}

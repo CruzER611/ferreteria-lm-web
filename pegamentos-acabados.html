@@ -1,289 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Suministros de Materiales L&amp;M: cemento, bloques, tubería, hierro, láminas, pegamentos y alquiler de maquinaria pesada. Servicio a domicilio disponible. Sucursales en Ciudad Delgado y Soyapango.">
+	<meta name="description" content="Catálogo de pegamentos y acabados de Suministros de Materiales L&amp;M. Consulta disponibilidad y cotiza por WhatsApp.">
 	<meta name="theme-color" content="#D10024">
 
-	<title>Suministros de Materiales L&amp;M | Materiales de construcción</title>
+	<title>Pegamentos y Acabados | Suministros de Materiales L&amp;M</title>
 
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-	<!-- Font Awesome (CDN) -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-
 	<!-- Slick -->
 	<link type="text/css" rel="stylesheet" href="css/slick.css"/>
 	<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
-
-	<!-- nouislider -->
-	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
-
-	<!-- Font Awesome Icon (local) -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-
 	<!-- Estilos de la plantilla -->
 	<link type="text/css" rel="stylesheet" href="css/style.css"/>
-
-	<!-- Mejoras propias: SIEMPRE al final para que sobrescriba lo anterior -->
+	<!-- Mejoras propias (siempre después de style.css) -->
 	<link type="text/css" rel="stylesheet" href="css/mejoras.css"/>
-
-    <style>
-        /* Estilos para ocultar/mostrar productos con el botón Cargar más */
-        .producto-item {
-            display: none;
-        }
-        .btn-cargar-mas {
-            background-color: #D10024;
-            color: #FFF;
-            border: none;
-            padding: 12px 35px;
-            font-weight: 700;
-            border-radius: 40px;
-            text-transform: uppercase;
-            transition: 0.3s background;
-            margin: 20px 0;
-        }
-        .btn-cargar-mas:hover {
-            background-color: #1E1F29;
-            color: #FFF;
-        }
-
-        /* =========================================================
-           SOLUCIÓN PARA ALINEACIÓN DE TARJETAS Y HOVER (SOLO AQUÍ)
-           ========================================================= */
-        #lista-productos {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            width: 100% !important;
-        }
-
-        #lista-productos > div {
-            display: flex !important;
-            flex-direction: column !important;
-            flex: 0 0 25% !important;
-            max-width: 25% !important;
-            width: 25% !important;
-            margin-bottom: 30px !important;
-            float: none !important;
-        }
-
-        @media (max-width: 991px) {
-            #lista-productos > div {
-                flex: 0 0 50% !important;
-                max-width: 50% !important;
-                width: 50% !important;
-            }
-        }
-        @media (max-width: 767px) {
-            #lista-productos > div {
-                flex: 0 0 100% !important;
-                max-width: 100% !important;
-                width: 100% !important;
-            }
-        }
-
-        .product {
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            width: 100% !important;
-            height: 100% !important;
-            position: relative !important;
-            background: #fff !important;
-            margin: 0 !important;
-        }
-
-        .product .product-body {
-            flex-grow: 1 !important;
-        }
-
-        .product .product-img {
-            height: 180px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            overflow: hidden !important;
-            background-color: #fff !important;
-            padding: 15px !important;
-        }
-
-        .product .product-img img {
-            max-height: 100% !important;
-            max-width: 100% !important;
-            object-fit: contain !important;
-        }
-
-        .product .add-to-cart {
-            position: absolute !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100% !important;
-            background: #1e1f29 !important;
-            text-align: center !important;
-            padding: 15px !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transition: opacity 0.3s ease, visibility 0.3s ease !important;
-            z-index: 20 !important;
-            transform: none !important;
-        }
-
-        .product:hover .add-to-cart {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: none !important;
-        }
-    </style>
+	<link type="text/css" rel="stylesheet" href="css/categorias.css"/>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div id="top-header">
-            <div class="container">
-                <ul class="header-links pull-left">
-                    <li><a href="https://wa.me/50363119405"><i class="fa fa-phone"></i> +503 6311 9405</a></li>
-                    <li><a href="mailto:suministrodematerialeslm@gmail.com"><i class="fa-solid fa-envelope"></i> suministrodematerialeslm@gmail.com</a></li>
-                    <li><a href="https://maps.app.goo.gl/v9jijMX7EBuBnp978" target="_blank"><i class="fa fa-map-marker"></i> Carr. Oro Km. 14, Ciudad Delgado</a></li>
-                    <li><a href="https://maps.app.goo.gl/VpvAzqQnysEqJSnQ6" target="_blank"><i class="fa fa-map-marker"></i> Soyapango, Ctra. a Tonacatepeque</a></li>
-                </ul>
-            </div>
-        </div>
+	<!-- HEADER -->
+	<header>
+		<div id="top-header">
+			<div class="container">
+				<ul class="header-links pull-left">
+					<li><a href="https://wa.me/50363119405"><i class="fa fa-phone"></i> +503 6311 9405</a></li>
+					<li><a href="mailto:suministrodematerialeslm@gmail.com"><i class="fa-solid fa-envelope"></i> suministrodematerialeslm@gmail.com</a></li>
+					<li><a href="https://maps.app.goo.gl/v9jijMX7EBuBnp978" target="_blank" rel="noopener noreferrer"><i class="fa fa-map-marker"></i> Carr. Oro Km. 14, Ciudad Delgado</a></li>
+					<li><a href="https://maps.app.goo.gl/VpvAzqQnysEqJSnQ6" target="_blank" rel="noopener noreferrer"><i class="fa fa-map-marker"></i> Soyapango, Ctra. a Tonacatepeque</a></li>
+				</ul>
+			</div>
+		</div>
 
-        <div id="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="header-logo">
-                            <a href="index.html" class="logo">
-                                <img src="./img/logo.png" alt="Suministros de Materiales LM">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="header-search">
-                            <form action="tuberia.html" method="GET">
-                                <input class="input" type="text" placeholder="Buscar en nuestro catálogo...">
-                                <button type="submit" class="search-btn">Buscar</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-3 clearfix">
-                        <div class="header-ctn">
-                            <div class="menu-toggle">
-                                <a href="#">
-                                    <i class="fa fa-bars"></i>
-                                    <span>Menú</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- /HEADER -->
+		<div id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="index.html" class="logo">
+								<img src="./img/logo.png" alt="Suministros de Materiales L&amp;M">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="header-search">
+							<form action="pegamentos-acabados.html" method="GET">
+								<input class="input" type="text" name="q" aria-label="Buscar" placeholder="Buscar en nuestro catálogo...">
+								<button type="submit" class="search-btn">Buscar</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menú</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- /HEADER -->
 
-    <!-- NAVIGATION -->
-    <nav id="navigation">
-        <div class="container">
-            <div id="responsive-nav">
-                <ul class="main-nav nav navbar-nav">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="cementos.html">Cementos</a></li>
-                    <li><a href="ladrillos-bloques.html">Ladrillos y Bloques</a></li>
-                    <li><a href="tuberia.html">Tuberia</a></li>
-                    <li class="active"><a href="pegamentos-acabados.html">Pegamentos y Acabados</a></li>
-                    <li><a href="hierros-laminas.html">Hierros y Láminas</a></li>
-                    <li><a href="maquinaria.html">Maquinaria</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- /NAVIGATION -->
+	<!-- NAVIGATION -->
+	<nav id="navigation">
+		<div class="container">
+			<div id="responsive-nav">
+				<ul class="main-nav nav navbar-nav">
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="cementos.html">Cementos</a></li>
+					<li><a href="ladrillos-bloques.html">Ladrillos y Bloques</a></li>
+					<li><a href="tuberia.html">Tubería</a></li>
+					<li class="active"><a href="pegamentos-acabados.html">Pegamentos y Acabados</a></li>
+					<li><a href="hierros-laminas.html">Hierros y Láminas</a></li>
+					<li><a href="maquinaria.html">Maquinaria</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- /NAVIGATION -->
 
-    <!-- BREADCRUMB -->
-    <div id="breadcrumb" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="breadcrumb-tree">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li class="active">Catálogo de Pegamentos y Acabados</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /BREADCRUMB -->
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="breadcrumb-tree">
+						<li><a href="index.html">Inicio</a></li>
+						<li class="active">Catálogo de Pegamentos y Acabados</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
 
-    <!-- SECTION DE PRODUCTOS -->
-    <div class="section">
-        <div class="container">
-            <div class="row">
+	<!-- PRODUCTOS -->
+	<div class="section">
+		<div class="container">
+			<div class="row">
 
-                <div class="col-md-12">
-                    <div class="section-title">
-                        <h3 class="title">Categoría: Pegamentos y Acabados</h3>
-                    </div>
-                </div>
+				<div class="col-md-12">
+					<div class="section-title">
+						<h3 class="title">Categoría: Pegamentos y Acabados</h3>
+					</div>
+				</div>
 
-                <!-- CONTENEDOR DE PRODUCTOS -->
-                
+				<!-- Aviso mientras la categoría no tiene productos (desaparece solo al agregar uno) -->
+				<div id="catalogo-vacio" class="col-md-12 text-center catalogo-vacio">
+					<i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+					<h4>Estamos actualizando este catálogo</h4>
+					<p>Escríbenos por WhatsApp y te decimos qué pegamentos y acabados tenemos disponibles.</p>
+					<a class="primary-btn" href="https://wa.me/50363119405?text=Hola%2C%20quisiera%20consultar%20los%20productos%20de%20pegamentos%20y%20acabados" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+				</div>
+
+				<!-- Lista de productos: el JS (js/categorias.js) los muestra de 8 en 8 -->
+				<div id="lista-productos">
+
+					<!-- ================= PLANTILLA PARA AGREGAR UN PRODUCTO =================
+					     1) Copia el bloque de abajo DENTRO de este contenedor (después de este comentario).
+					     2) Cambia la imagen, la marca, el nombre, la descripción y el mensaje de WhatsApp.
+					     3) Guarda. El aviso de "catálogo vacío" desaparece solo.
+
+					     <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/NOMBRE-DE-LA-IMAGEN.png" alt="Nombre del producto" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">Marca</p>
+					           <h3 class="product-name"><a href="#">Nombre del producto</a></h3>
+					           <p class="product-desc">Descripción corta.</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: Nombre del producto"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+					================================================================== -->
+                    <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/product03.png" alt="DECOBLOCK NARANJA" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">REFLEX</p>
+					           <h3 class="product-name"><a href="#">DECOBLOCK GRIS FINO</a></h3>
+					           <p class="product-desc">Combina alta resistencia estructural con una superficie lisa y estética superior para muros aparentes.</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: DECOBLOCK GRIS FINO (NARANJA)"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+
+                         <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/deco01.png" alt="DECOBLOCK AZUL" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">REFLEX</p>
+					           <h3 class="product-name"><a href="#">DECOBLOCK BLANCO FINO</a></h3>
+					           <p class="product-desc">Combina alta resistencia estructural con una superficie lisa y estética superior para muros aparentes.</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: DECOBLOCK BLANCO FINO (AZUL)"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+
+                         <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/multi40.png" alt="MULTIBOND 40KG" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">REFLEX</p>
+					           <h3 class="product-name"><a href="#">MULTIBOND 40KG</a></h3>
+					           <p class="product-desc">Adhesivo de alta adherencia y rendimiento profesional (Clasificación C2TE).</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: MULTIBOND 40 KG"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+
+                         <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/product06.png" alt="MULTIBOND 20KG" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">REFLEX</p>
+					           <h3 class="product-name"><a href="#">MULTIBOND 20KG</a></h3>
+					           <p class="product-desc">Adhesivo de alta adherencia y rendimiento profesional (Clasificación C2TE).</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: MULTIBOND 20 KG"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+
+                         <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/power.png" alt="POWERMIX 20KG" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">REFLEX</p>
+					           <h3 class="product-name"><a href="#">POWERMIX 20KG</a></h3>
+					           <p class="product-desc">Adhesivo estándar para pisos y paredes cerámicas (interiores y exteriores con tráfico liviano).</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: POWERMIX 20 KG"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+
+                         <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/pega.png" alt="PEGAMIX 20KG" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">CEMIX</p>
+					           <h3 class="product-name"><a href="#">PEGAMIX 20KG</a></h3>
+					           <p class="product-desc">Adhesivo cerámico para pisos y azulejos en interiores. Diseñado para cerámicas de media y alta absorción de agua.</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: PEGAMIX 20 KG"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+
+                         <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/crestg.png" alt="CRESTUCO GRIS GRUESO" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">CREST</p>
+					           <h3 class="product-name"><a href="#">CRESTUCO GRIS GRUESO</a></h3>
+					           <p class="product-desc">Base de repello o aplanado grueso para muros de concreto, bloque o ladrillo (interiores y exteriores).</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: CRESTUCO GRIS GRUESO"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+
+                         <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/crestb.png" alt="CRESTUCO BLANCO FINO" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">CREST</p>
+					           <h3 class="product-name"><a href="#">CRESTUCO BLANCO FINO</a></h3>
+					           <p class="product-desc">Mezcla lista para usar que alisa y blanquea las paredes, proporcionando una superficie suave ideal para pintar o dejar como acabado final directo.</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: CRESTUCO BLANCO FINO"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
+
+                         <div class="col-md-3 col-xs-6 producto-item">
+					       <div class="product">
+					         <div class="product-img"><img src="./img/cal.png" alt="CAL HIDRATADA" loading="lazy"></div>
+					         <div class="product-body">
+					           <p class="product-category">HORCALSA</p>
+					           <h3 class="product-name"><a href="#">CAL HIDRATADA 44LB</a></h3>
+					           <p class="product-desc">Cal hidratada de alta calidad Horcalsa. Mejora la trabajabilidad, adherencia y retención de agua en morteros para repello y pegado de ladrillos.</p>
+					         </div>
+					         <div class="add-to-cart"><button class="add-to-cart-btn" data-mensaje="Hola, quisiera cotizar: CAL HIDRATADA"><i class="fa-brands fa-whatsapp"></i> Cotizar</button></div>
+					       </div>
+					     </div>
 
 
 
-                
+				</div>
+				<!-- /Lista de productos -->
 
-            </div>
-        </div>
-    </div>
-    <!-- /SECTION DE PRODUCTOS -->
+				<!-- Contador y botón Cargar más (se esconden solos si no hacen falta) -->
+				<div class="col-md-12 text-center">
+					<p id="contador-productos" aria-live="polite"></p>
+					<button id="btn-cargar-mas" class="btn-cargar-mas" type="button">Cargar más productos</button>
+				</div>
 
-    <!-- NEWSLETTER / REDES SOCIALES -->
-    <div id="newsletter" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="newsletter" style="text-align: center;">
-                        <p>¡GRACIAS POR PREFERIRNOS! <strong>SUMINISTROS DE MATERIALES L&M</strong></p>
-                        
-                        <div class="texto-imagen-container">
-                            <img src="./img/tarjeta.jpg" alt="Imagen informativa" class="imagen-newsletter" style="display: block; margin: 0 auto 15px auto; max-width: 100%;">
-                            
-                            <div class="redes-abajo" style="margin-top: 15px;">
-                                <span class="texto-destacado" style="display: block; font-weight: bold; margin-bottom: 10px;">SIGUENOS EN NUESTRAS REDES SOCIALES!!!</span>
-                                
-                                <ul class="newsletter-follow" style="display: inline-flex; list-style: none; gap: 15px; padding: 0; justify-content: center;">
-                                    <li>
-                                        <a href="https://www.facebook.com/share/19UXctf94p/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.tiktok.com/@ferreterialeon.1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://wa.me/50363119405?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20sus%20materiales" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+			</div>
+		</div>
+	</div>
+	<!-- /PRODUCTOS -->
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /NEWSLETTER -->
+	<!-- REDES SOCIALES -->
+	<div id="newsletter" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="newsletter">
+						<p>¡GRACIAS POR PREFERIRNOS! <strong>SUMINISTROS DE MATERIALES L&amp;M</strong></p>
 
-    <!-- FOOTER -->
+						<div class="texto-imagen-container">
+							<img src="./img/tarjeta.jpg" alt="Tarjeta informativa de Suministros de Materiales L&amp;M" class="imagen-newsletter" loading="lazy">
+
+							<div class="redes-abajo">
+								<span class="texto-destacado">SÍGUENOS EN NUESTRAS REDES SOCIALES</span>
+
+								<ul class="newsletter-follow">
+									<li><a href="https://www.facebook.com/share/19UXctf94p/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+									<li><a href="https://www.tiktok.com/@ferreterialeon.1" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
+									<li><a href="https://wa.me/50363119405?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20materiales" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /REDES SOCIALES -->
+
+	<!-- FOOTER -->
 	<footer id="footer">
 		<div class="section">
 			<div class="container">
@@ -300,10 +314,11 @@
 							<h3 class="footer-title">Categorías</h3>
 							<ul class="footer-links">
 								<li><a href="cementos.html">Cementos</a></li>
-								<li><a href="pegamentos-acabados.html">Pegamentos</a></li>
+								<li><a href="ladrillos-bloques.html">Ladrillos y Bloques</a></li>
 								<li><a href="tuberia.html">Tubería</a></li>
+								<li><a href="pegamentos-acabados.html">Pegamentos y Acabados</a></li>
 								<li><a href="hierros-laminas.html">Hierros y Láminas</a></li>
-								<li><a href="maquinaria.html">Maquinaria Pesada</a></li>
+								<li><a href="maquinaria.html">Maquinaria</a></li>
 							</ul>
 						</div>
 					</div>
@@ -314,9 +329,9 @@
 						<div class="footer">
 							<h3 class="footer-title">Contacto</h3>
 							<ul class="footer-links">
-								<li><a href="https://wa.me/50363119405?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20materiales" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i>+503 6311 9405</a></li>
-								<li><a href="https://wa.me/50374686961?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20materiales" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i>+503 7468 6961</a></li>
-								<li><a href="mailto:suministrodematerialeslm@gmail.com"><i class="fa fa-envelope-o"></i>Envíanos un correo</a></li>
+								<li><a href="https://wa.me/50363119405?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20materiales" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i>+503 6311 9405</a></li>
+								<li><a href="https://wa.me/50374686961?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20materiales" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i>+503 7468 6961</a></li>
+								<li><a href="mailto:suministrodematerialeslm@gmail.com"><i class="fa-solid fa-envelope"></i>Envíanos un correo</a></li>
 							</ul>
 						</div>
 					</div>
@@ -325,8 +340,8 @@
 						<div class="footer">
 							<h3 class="footer-title">SUCURSALES</h3>
 							<ul class="footer-links">
-								<li><a href="https://maps.app.goo.gl/v9jijMX7EBuBnp978"><i class="fa fa-map-marker"></i>Carr. Oro Km. 14, Ciudad Delgado</a></li>
-								<li><a href="https://maps.app.goo.gl/VpvAzqQnysEqJSnQ6"><i class="fa fa-map-marker"></i>Soyapango, Carretera a Tonacatepeque</a></li>
+								<li><a href="https://maps.app.goo.gl/v9jijMX7EBuBnp978" target="_blank" rel="noopener noreferrer"><i class="fa fa-map-marker"></i>Carr. Oro Km. 14, Ciudad Delgado</a></li>
+								<li><a href="https://maps.app.goo.gl/VpvAzqQnysEqJSnQ6" target="_blank" rel="noopener noreferrer"><i class="fa fa-map-marker"></i>Soyapango, Ctra. a Tonacatepeque</a></li>
 							</ul>
 						</div>
 					</div>
@@ -346,11 +361,11 @@
 	</footer>
 	<!-- /FOOTER -->
 
-	<!-- BOTÓN FLOTANTE DE WHATSAPP (nuevo) -->
+	<!-- BOTÓN FLOTANTE DE WHATSAPP -->
 	<a class="whatsapp-float"
 	   href="https://wa.me/50363119405?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20materiales"
 	   target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
-		<i class="fa fa-whatsapp" aria-hidden="true"></i>
+		<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 		<span class="whatsapp-float-text">Escríbenos</span>
 	</a>
 
@@ -358,28 +373,8 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/slick.min.js"></script>
-	<script src="js/nouislider.min.js"></script>
-	<script src="js/jquery.zoom.min.js"></script>
 	<script src="js/main-nuevo.js"></script>
-
-	<script>
-		// Botones "Comprar" y "Consultar": abren WhatsApp con el mensaje del producto.
-		// Usamos un solo "escuchador" en todo el documento para que también
-		// funcione con las copias que crea el carrusel (Slick).
-		(function () {
-			var telefono = '50363119405';
-
-			document.addEventListener('click', function (e) {
-				var boton = e.target.closest('.add-to-cart-btn[data-mensaje]');
-				if (!boton) { return; }
-
-				var url = 'https://wa.me/' + telefono + '?text=' + encodeURIComponent(boton.dataset.mensaje);
-				window.open(url, '_blank', 'noopener');
-			});
-		})();
-
-        
-	</script>
+	<script src="js/categorias.js"></script>
 
 </body>
 </html>
